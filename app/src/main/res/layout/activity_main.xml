@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="Hello, please mark in the check box the ingredients you have:"
-        android:textColor="#9F9F9F"
+        android:textColor="#FFFFFF"
         android:textSize="30dp" />
 
     <LinearLayout
@@ -29,80 +29,102 @@
 
 
         <CheckBox
-            android:id="@+id/checkBox5"
+            android:id="@+id/checkBox1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
             android:text="eggs" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
+            android:id="@+id/checkBox2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
             android:text="milk" />
 
         <CheckBox
             android:id="@+id/checkBox3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
             android:text="meat" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
+            android:text="flour" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
+            android:text="tomato" />
 
         <CheckBox
             android:id="@+id/checkBox6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
-            android:text="flour" />
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
+            android:text="potato" />
 
         <CheckBox
             android:id="@+id/checkBox7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
-            android:text="tomato" />
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
+            android:text="cheese" />
 
         <CheckBox
             android:id="@+id/checkBox8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
-            android:text="potato" />
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
+            android:text="chicken" />
 
         <CheckBox
             android:id="@+id/checkBox9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
-            android:text="cheese" />
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
+            android:text="mushrooms" />
 
         <CheckBox
             android:id="@+id/checkBox10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
-            android:text="chicken" />
-
-        <CheckBox
-            android:id="@+id/checkBox11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
-            android:text="mushrooms" />
-
-        <CheckBox
-            android:id="@+id/checkBox12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#C99F9F9F"
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
             android:text="chocolate"/>
 
       <Button
-          android:layout_width="match_parent"
+          android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:background="@drawable/roundedbutton"
+          android:backgroundTint="@drawable/roundedbutton"
           android:id="@+id/mmd"
+          android:layout_gravity="center"
           android:text="MAKE ME DINNER"
           android:textSize="17dp"
           />
