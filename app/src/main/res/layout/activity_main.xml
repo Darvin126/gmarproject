@@ -21,7 +21,9 @@
         android:text="Hello, please mark in the check box the ingredients you have:"
         android:textColor="#FFFFFF"
         android:textSize="30dp" />
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -118,17 +120,16 @@
             android:buttonTint="@color/black"
             android:text="chocolate"/>
 
-      <Button
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:background="@drawable/roundedbutton"
-          android:backgroundTint="@drawable/roundedbutton"
-          android:id="@+id/mmd"
-          android:layout_gravity="center"
-          android:text="MAKE ME DINNER"
-          android:textSize="17dp"
-          />
+        <Button
+            android:id="@+id/mmd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:backgroundTint="#AA6464"
+            android:text="MAKE ME DINNER"
+            android:textSize="17dp" />
     </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
