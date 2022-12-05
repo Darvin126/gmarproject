@@ -14,7 +14,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9, cb10;
+    CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9, cb10, cb11;
     TextToSpeech t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cb9.setOnClickListener(this);
         cb10 = findViewById(R.id.checkBox10);
         cb10.setOnClickListener(this);
+        cb11 = findViewById(R.id.checkBox11);
+        cb11.setOnClickListener(this);
 
         t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -148,6 +150,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if(v == cb10 && !cb10.isChecked()){
             alfa2(cb10, cb10);
+        }
+        if( v == cb11 && cb11.isChecked()){
+            String toSpeak = cb11.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            alfa1(cb11, cb11);
+        }
+        else if(v == cb11 && !cb11.isChecked()){
+            alfa2(cb11, cb11);
         }
     }
     public void onPause() {

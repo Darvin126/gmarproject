@@ -109,7 +109,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
-            android:text="mushrooms" />
+            android:text="heavy cream" />
 
         <CheckBox
             android:id="@+id/checkBox10"
@@ -119,6 +119,14 @@
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
             android:text="chocolate"/>
+        <CheckBox
+            android:id="@+id/checkBox11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#C9000000"
+            android:background="@drawable/checkbox"
+            android:buttonTint="@color/black"
+            android:text="pasta"/>
 
         <Button
             android:id="@+id/mmd"
