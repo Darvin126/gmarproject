@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.Voice;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.CheckBox;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9, cb10;
+    TextToSpeech t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,79 +41,120 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cb10 = findViewById(R.id.checkBox10);
         cb10.setOnClickListener(this);
 
+        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+                    t1.setPitch(1.6f);
+                    t1.setSpeechRate(0.3f);
+                }
+            }
+        });
+
     }
     public void alfa1(View view, CheckBox cb){
-        AlphaAnimation alp = new AlphaAnimation(1,0.2F);
-        alp.setDuration(100);
+        AlphaAnimation alp = new AlphaAnimation(1,0.5F);
+        alp.setDuration(600);
+        alp.setFillAfter(true);
         cb.startAnimation(alp);
     }
     public void alfa2(View view, CheckBox cb){
-        AlphaAnimation alp = new AlphaAnimation(0.2F,1);
-        alp.setDuration(100);
+        AlphaAnimation alp = new AlphaAnimation(0.5F,1);
+        alp.setDuration(600);
+        alp.setFillAfter(true);
         cb.startAnimation(alp);
     }
 
     @Override
     public void onClick(View v) {
         if( v == cb1 && cb1.isChecked()){
+            String toSpeak = cb1.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb1, cb1);
         }
         else if(v == cb1 && !cb1.isChecked()){
             alfa2(cb1, cb1);
         }
         if( v == cb2 && cb2.isChecked()){
+            String toSpeak = cb2.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb2, cb2);
         }
         else if(v == cb2 && !cb2.isChecked()){
             alfa2(cb2, cb2);
         }
         if( v == cb3 && cb3.isChecked()){
+            String toSpeak = cb3.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb3, cb3);
         }
         else if(v == cb3 && !cb3.isChecked()){
             alfa2(cb3, cb3);
         }
         if( v == cb4 && cb4.isChecked()){
+            String toSpeak = cb4.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb4, cb4);
         }
         else if(v == cb4 && !cb4.isChecked()){
             alfa2(cb4, cb4);
         }
         if( v == cb5 && cb5.isChecked()){
+            String toSpeak = cb5.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb5, cb5);
         }
         else if(v == cb5 && !cb5.isChecked()){
             alfa2(cb5, cb5);
         }
         if( v == cb6 && cb6.isChecked()){
+            String toSpeak = cb6.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb6, cb6);
         }
         else if(v == cb6 && !cb6.isChecked()){
             alfa2(cb6, cb6);
         }
         if( v == cb7 && cb7.isChecked()){
+            String toSpeak = cb7.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb7, cb7);
         }
         else if(v == cb7 && !cb7.isChecked()){
+
             alfa2(cb7, cb7);
         }
         if( v == cb8 && cb8.isChecked()){
+            String toSpeak = cb8.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb8, cb8);
         }
         else if(v == cb8 && !cb8.isChecked()){
             alfa2(cb8, cb8);
         }
         if( v == cb9 && cb9.isChecked()){
+            String toSpeak = cb9.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb9, cb9);
         }
         else if(v == cb9 && !cb9.isChecked()){
             alfa2(cb9, cb9);
         }
         if( v == cb10 && cb10.isChecked()){
+            String toSpeak = cb10.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             alfa1(cb10, cb10);
         }
         else if(v == cb10 && !cb10.isChecked()){
             alfa2(cb10, cb10);
         }
+    }
+    public void onPause() {
+        if (t1 != null) {
+            t1.stop();
+            t1.shutdown();
+        }
+        super.onPause();
     }
 }
