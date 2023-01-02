@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
                     t1.setLanguage(Locale.UK);
-                    t1.setPitch(1.6f);
-                    t1.setSpeechRate(0.3f);
+                    t1.setPitch(1.0f);
+                    t1.setSpeechRate(0.9f);
                 }
             }
         });
