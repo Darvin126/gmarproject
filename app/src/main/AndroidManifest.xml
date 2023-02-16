@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gmarproject">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gmarproject">
         <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
             android:name=".splashscreen"
             android:exported="true">
             <intent-filter>
@@ -18,12 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:name=".login"
+            android:exported="false"></activity>
     </application>
 
 </manifest>

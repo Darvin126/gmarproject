@@ -19,7 +19,7 @@ public class splashscreen extends AppCompatActivity {
                         sleep(150);
                         delay = delay + 100;
                     }
-                    startActivity(new Intent(splashscreen.this, MainActivity.class));
+                    startActivity(new Intent(splashscreen.this, login.class));
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
