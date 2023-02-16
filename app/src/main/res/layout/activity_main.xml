@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@drawable/background3"
-    android:weightSum="4">
+    android:background="@drawable/background3">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_margin="10dp"
         android:src="@drawable/logo"/>
     <TextView
         android:layout_width="match_parent"
@@ -20,14 +20,16 @@
         android:fontFamily="sans-serif-black"
         android:text="Hello, please mark in the check box the ingredients you have:"
         android:textColor="#FFFFFF"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:layout_margin="15dp"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="10dp">
 
 
         <CheckBox
@@ -37,6 +39,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="eggs" />
 
         <CheckBox
@@ -46,6 +49,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="milk" />
 
         <CheckBox
@@ -55,6 +59,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="meat" />
 
         <CheckBox
@@ -64,6 +69,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="flour" />
 
         <CheckBox
@@ -73,6 +79,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="tomato" />
 
         <CheckBox
@@ -82,6 +89,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="potato" />
 
         <CheckBox
@@ -91,6 +99,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="cheese" />
 
         <CheckBox
@@ -100,6 +109,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="chicken" />
 
         <CheckBox
@@ -109,6 +119,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="heavy cream" />
 
         <CheckBox
@@ -118,6 +129,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="chocolate"/>
         <CheckBox
             android:id="@+id/checkBox11"
@@ -126,6 +138,7 @@
             android:textColor="#C9000000"
             android:background="@drawable/checkbox"
             android:buttonTint="@color/black"
+            android:layout_marginVertical="2dp"
             android:text="pasta"/>
 
         <Button
@@ -133,9 +146,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:backgroundTint="#AA6464"
+            android:backgroundTint="#393E4E"
             android:text="MAKE ME DINNER"
-            android:textSize="17dp" />
+            android:textSize="17dp"
+            android:layout_margin="10dp"/>
     </LinearLayout>
     </ScrollView>
 
