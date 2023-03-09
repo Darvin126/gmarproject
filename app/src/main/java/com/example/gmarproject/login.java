@@ -2,13 +2,34 @@ package com.example.gmarproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-//gist.github.com/CHR1ST14N02/a26e720d9c4a7ad7dfe0fbc1f05b9989
-public class login extends AppCompatActivity {
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
+//gist.github.com/CHR1ST14N02/a26e720d9c4a7ad7dfe0fbc1f05b9989
+public class login extends AppCompatActivity implements View.OnClickListener {
+EditText username, password;
+Button login, register;
+DBHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        username = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.Password);
+        db = new DBHelper(this);
+        login = findViewById(R.id.login);
+        register = findViewById(R.id.register);
+        register.setOnClickListener(this);
+        login.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+
     }
 }

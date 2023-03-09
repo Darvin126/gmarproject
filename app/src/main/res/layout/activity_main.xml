@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@drawable/background3">
+    android:background="@drawable/background4">
 
     <ImageView
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="Hello, please mark in the check box the ingredients you have:"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFD0CC"
         android:textSize="30dp"
         android:layout_margin="15dp"/>
     <ScrollView

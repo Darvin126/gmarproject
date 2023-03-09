@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="5.2"
-    android:background="@drawable/background3"
+    android:weightSum="4.5"
+    android:background="@drawable/background4"
     tools:context=".login">
 
 
@@ -47,15 +47,7 @@
             android:inputType="textPassword"
             android:textSize="15sp" />
     </LinearLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:textSize="12sp"
-        android:text="dont have an account? click here"
-        android:background="@color/material_on_background_disabled"
-        android:layout_marginLeft="15dp"
-        />
+
         <Button
             android:id="@+id/login"
             android:layout_width="wrap_content"
