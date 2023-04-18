@@ -1,8 +1,6 @@
 package com.example.gmarproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +11,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
 Button reg, login;
 EditText username, password, cpass;
 
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +35,7 @@ EditText username, password, cpass;
             if (view == reg){
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
-                String cpass = 
+
             }
 
     }

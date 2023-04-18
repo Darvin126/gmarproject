@@ -11,7 +11,7 @@ import android.widget.EditText;
 //gist.github.com/CHR1ST14N02/a26e720d9c4a7ad7dfe0fbc1f05b9989
 public class login extends AppCompatActivity implements View.OnClickListener {
 EditText username, password;
-Button login, register;
+Button login;
 DBHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +22,6 @@ DBHelper db;
         password = (EditText) findViewById(R.id.Password);
         db = new DBHelper(this);
         login = findViewById(R.id.login);
-        register = findViewById(R.id.register);
-        register.setOnClickListener(this);
         login.setOnClickListener(this);
     }
 
