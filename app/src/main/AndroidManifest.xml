@@ -12,10 +12,15 @@
             android:name=".MainActivity"
             android:exported="false">
         </activity>
+        <activity android:name=".login"
+            android:exported="false">
+        </activity>
+
         <activity
             android:name=".register"
             android:exported="false" >
         </activity>
+
         <activity
             android:name=".splashscreen"
             android:exported="true">
@@ -25,6 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

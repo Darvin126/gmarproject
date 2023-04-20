@@ -47,7 +47,7 @@
             android:inputType="textPassword"
             android:textSize="15sp" />
         <EditText
-            android:id="@+id/Passwordcon"
+            android:id="@+id/Passwordcon1"
             android:layout_margin="4dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -71,16 +71,6 @@
         android:textAlignment="center"
         android:textSize="25dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/login"
-        android:gravity="left"
-        android:textSize="12sp"
-        android:text="Have an account? click here"
-        android:background="@color/material_on_background_disabled"
-        android:layout_marginLeft="15dp"
-        ></Button>
 
 
 
