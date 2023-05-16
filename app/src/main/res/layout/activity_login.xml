@@ -27,24 +27,26 @@
         android:layout_margin="10dp">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/username1"
             android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_weight="2"
             android:background="@drawable/checkbox"
             android:hint=" Enter your username"
+            android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/Password"
+            android:id="@+id/Password1"
             android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_weight="2"
             android:background="@drawable/checkbox"
             android:hint=" Enter your password"
+            android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:inputType="textPassword"
             android:textSize="15sp" />
@@ -70,10 +72,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:backgroundTint="@null"
+        android:background="@null"
         android:gravity="left"
         android:text="Don't have an account? Click here" />
-
 
 </LinearLayout>
 

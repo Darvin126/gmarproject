@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 import android.widget.CheckBox;
 
 import java.util.Locale;
@@ -15,6 +16,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9, cb10, cb11;
+    Button mmd;
     TextToSpeech t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cb10.setOnClickListener(this);
         cb11 = findViewById(R.id.checkBox11);
         cb11.setOnClickListener(this);
+        mmd = findViewById(R.id.mmd);
+        mmd.setOnClickListener(this);
 
         t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -158,6 +162,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if(v == cb11 && !cb11.isChecked()){
             alfa2(cb11, cb11);
+        }
+        if (v == mmd){
+            Intent intent = new Intent(getApplicationContext(), recepies.class);
+            startActivity(intent);
         }
     }
     public void onPause() {

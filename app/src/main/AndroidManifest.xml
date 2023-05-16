@@ -10,17 +10,16 @@
         android:theme="@style/Theme.Gmarproject">
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
-        <activity android:name=".login"
-            android:exported="false">
-        </activity>
-
+            android:exported="false"></activity>
+        <activity
+            android:name=".recepies"
+            android:exported="false"></activity>
         <activity
             android:name=".register"
-            android:exported="false" >
-        </activity>
-
+            android:exported="false"></activity>
+        <activity
+            android:name=".login"
+            android:exported="false"></activity>
         <activity
             android:name=".splashscreen"
             android:exported="true">
@@ -30,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
