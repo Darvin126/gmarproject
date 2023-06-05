@@ -168,38 +168,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String[] ing = new String[10];
             Intent intent = new Intent(getApplicationContext(), recepies.class);
             if (cb1.isChecked() == true){
-                intent.putExtra("cb1", cb1.getText());
+                ing[0] = String.valueOf(cb1.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb2", cb2.getText());
+                ing[1] = String.valueOf(cb2.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb3", cb3.getText());
+                ing[2] = String.valueOf(cb3.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb4", cb4.getText());
+                ing[3] = String.valueOf(cb4.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb5", cb5.getText());
+                ing[4] = String.valueOf(cb5.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb6", cb6.getText());
+                ing[5] = String.valueOf(cb6.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb7", cb7.getText());
+                ing[6] = String.valueOf(cb7.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb8", cb8.getText());
+                ing[7] = String.valueOf(cb8.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb9", cb9.getText());
+                ing[8] = String.valueOf(cb9.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb10", cb10.getText());
+                ing[9] = String.valueOf(cb10.getText());
             }
             if (cb1.isChecked() == true){
-                intent.putExtra("cb11", cb11.getText());
+                ing[10] = String.valueOf(cb11.getText());
             }
+            intent.putExtra("aving", ing);
             startActivity(intent);
         }
 

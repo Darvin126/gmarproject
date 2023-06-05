@@ -2,8 +2,12 @@ package com.example.gmarproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 //www.mako.co.il/food-recipes/recipes_column-pasta/Recipe-dd269cd9815a281027.htm?sCh=bc0539cdf3178110&pId=25483675 פסטה רוזה
 //https://www.mako.co.il/food-cooking_magazine/food-store/Recipe-4bb855142603871026.htm?sCh=bc0539cdf3178110&pId=25483675 בולונז
@@ -22,15 +26,48 @@ import android.view.View;
 //https://www.mako.co.il/food-cooking_magazine/cooking-with-children/Recipe-ca358ae44ac2b61027.htm?sCh=bc0539cdf3178110&pId=25483675 פסטה רוטה עגבניות
 //https://www.mako.co.il/food-recipes/recipes_column-bread/Recipe-127f69e2a576281027.htm?sCh=860539cdf3178110&pId=25483675 לחמניות פופאוברס
 public class recepies extends AppCompatActivity implements View.OnClickListener{
-
+DBHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recepies);
+        db = new DBHelper(this);
     }
 
     @Override
     public void onClick(View view) {
-        if ()
+        String[] ing = getIntent().getStringArrayExtra("aving");
+        int count = 0;
+        for (int i =0; i < ing.length; i++){
+            if (ing[i] != null){
+                count++;
+            }
+        }
+        String[] newing = new String[count];
+        for (int i =0; i < ing.length; i++){
+            if (ing[i] != null){
+                newing[i] = ing[i];
+            }
+        }
+        db.makemedinner(newing);
+        LinearLayout layout = findViewById(R.id.recepieslayout);
+        if (db.makemedinner(newing).length == 0 ){
+            TextView tv = new TextView(this);
+            tv.setText("we do not have a recepie with only those ingrediants, please try something else");
+            tv.setBackgroundColor(Color.BLACK);
+            tv.setTextColor(Color.WHITE);
+            tv.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+        }
+        for (int i = 0;i < db.makemedinner(newing).length;i++){
+            Button btn = new Button(this);
+            btn.setText(db.makemedinner(newing)[i]);
+            btn.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            ));
+        }
+
     }
 }

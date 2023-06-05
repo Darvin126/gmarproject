@@ -1,5 +1,6 @@
 package com.example.gmarproject;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -22,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("create table users(username TEXT primary key , password TEXT )");
         MyDB.execSQL("create table recepies(rname TEXT primary key)");
         MyDB.execSQL("create table ingrediants(iname TEXT primary key)");
-        MyDB.execSQL("create table comd(rname TEXT primary key, iname TEXT)");
+        MyDB.execSQL("create table comd(rname TEXT, iname TEXT)");
 // Inserting sample data for the initial start of the application
         insertRecepies("בולונז");
         insertRecepies("עוגיית שוקולד");
@@ -164,7 +165,7 @@ public class DBHelper extends SQLiteOpenHelper {
          else
              return false;
      }
-     public String makemedinner(String[] ingrediants){
+     public String[] makemedinner(String[] ingrediants){
          SQLiteDatabase MyDB = this.getWritableDatabase();
          String str = "Select rnames from comb where";
          for(int i = 0; i < ingrediants.length; i++){
@@ -173,7 +174,22 @@ public class DBHelper extends SQLiteOpenHelper {
                 str+= " and ";
             }
          }
-          Cursor cursor = MyDB.rawQuery(str,null);
-          return str;
+
+         Cursor cursor = MyDB.rawQuery(str,null);
+         int resultCount = cursor.getCount();
+
+         String[] resultArray = new String[resultCount];
+         int index = 0;
+
+         if (cursor.moveToFirst()) {
+             do {
+                 @SuppressLint("Range") String result = cursor.getString(cursor.getColumnIndex("rnames"));
+                 resultArray[index] = result;
+                 index++;
+             } while (cursor.moveToNext());
+         }
+
+         cursor.close();
+          return resultArray;
      }
 }
