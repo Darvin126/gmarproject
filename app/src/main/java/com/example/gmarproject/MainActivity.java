@@ -170,38 +170,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (cb1.isChecked() == true){
                 ing[0] = String.valueOf(cb1.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb2.isChecked() == true){
                 ing[1] = String.valueOf(cb2.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb3.isChecked() == true){
                 ing[2] = String.valueOf(cb3.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb4.isChecked() == true){
                 ing[3] = String.valueOf(cb4.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb5.isChecked() == true){
                 ing[4] = String.valueOf(cb5.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb6.isChecked() == true){
                 ing[5] = String.valueOf(cb6.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb7.isChecked() == true){
                 ing[6] = String.valueOf(cb7.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb8.isChecked() == true){
                 ing[7] = String.valueOf(cb8.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb9.isChecked() == true){
                 ing[8] = String.valueOf(cb9.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb10.isChecked() == true){
                 ing[9] = String.valueOf(cb10.getText());
             }
-            if (cb1.isChecked() == true){
+            if (cb11.isChecked() == true){
                 ing[10] = String.valueOf(cb11.getText());
             }
             intent.putExtra("aving", ing);
-            startActivity(intent);
+            startActivity(new Intent(MainActivity.this, recepies.class));;
         }
 
 
