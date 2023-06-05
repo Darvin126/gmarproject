@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9, cb10, cb11;
     Button mmd;
     TextToSpeech t1;
+    Toast toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -165,6 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == mmd){
+            toast.makeText(getApplicationContext(), "Hello, World!", toast.LENGTH_SHORT).show();
             String[] ing = new String[10];
             Intent intent = new Intent(getApplicationContext(), recepies.class);
             if (cb1.isChecked() == true){
@@ -201,7 +204,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ing[10] = String.valueOf(cb11.getText());
             }
             intent.putExtra("aving", ing);
-            startActivity(new Intent(MainActivity.this, recepies.class));;
+            startActivity(intent);
         }
 
 
