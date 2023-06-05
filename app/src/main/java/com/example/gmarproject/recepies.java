@@ -3,6 +3,8 @@ package com.example.gmarproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+
 //www.mako.co.il/food-recipes/recipes_column-pasta/Recipe-dd269cd9815a281027.htm?sCh=bc0539cdf3178110&pId=25483675 פסטה רוזה
 //https://www.mako.co.il/food-cooking_magazine/food-store/Recipe-4bb855142603871026.htm?sCh=bc0539cdf3178110&pId=25483675 בולונז
 //https://www.mako.co.il/food-recipes/recipes_column-cakes/Recipe-688a56783d6f181027.htm?sCh=131539cdf3178110&pId=25483675 עוגיית שוקולד
@@ -19,11 +21,16 @@ import android.os.Bundle;
 //https://www.mako.co.il/food-cooking_magazine/ruthie_rousso_recipes/Recipe-2fba4f2c85a1071027.htm?sCh=bc0539cdf3178110&pId=25483675 פסטת חמאת עגבניות ופירורי לחם
 //https://www.mako.co.il/food-cooking_magazine/cooking-with-children/Recipe-ca358ae44ac2b61027.htm?sCh=bc0539cdf3178110&pId=25483675 פסטה רוטה עגבניות
 //https://www.mako.co.il/food-recipes/recipes_column-bread/Recipe-127f69e2a576281027.htm?sCh=860539cdf3178110&pId=25483675 לחמניות פופאוברס
-public class recepies extends AppCompatActivity {
+public class recepies extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recepies);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if ()
     }
 }

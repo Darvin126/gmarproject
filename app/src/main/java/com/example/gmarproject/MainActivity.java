@@ -163,10 +163,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else if(v == cb11 && !cb11.isChecked()){
             alfa2(cb11, cb11);
         }
+
         if (v == mmd){
+            String[] ing = new String[10];
             Intent intent = new Intent(getApplicationContext(), recepies.class);
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb1", cb1.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb2", cb2.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb3", cb3.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb4", cb4.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb5", cb5.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb6", cb6.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb7", cb7.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb8", cb8.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb9", cb9.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb10", cb10.getText());
+            }
+            if (cb1.isChecked() == true){
+                intent.putExtra("cb11", cb11.getText());
+            }
             startActivity(intent);
         }
+
+
     }
     public void onPause() {
         if (t1 != null) {
