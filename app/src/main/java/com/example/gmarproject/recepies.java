@@ -27,16 +27,16 @@ import android.widget.TextView;
 //https://www.mako.co.il/food-recipes/recipes_column-bread/Recipe-127f69e2a576281027.htm?sCh=860539cdf3178110&pId=25483675 לחמניות פופאוברס
 public class recepies extends AppCompatActivity implements View.OnClickListener{
 DBHelper db;
+Button testbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recepies);
         db = new DBHelper(this);
-    }
+        testbtn = findViewById(R.id.testbtn);
+        testbtn.setOnClickListener(this);
 
-    @Override
-    public void onClick(View view) {
-        String[] ing = getIntent().getStringArrayExtra("aving");
+      /*  String[] ing = getIntent().getStringArrayExtra("aving");
         int count = 0;
         for (int i =0; i < ing.length; i++){
             if (ing[i] != null){
@@ -44,9 +44,11 @@ DBHelper db;
             }
         }
         String[] newing = new String[count];
+        int ingplacecount = 0;
         for (int i =0; i < ing.length; i++){
             if (ing[i] != null){
-                newing[i] = ing[i];
+                newing[ingplacecount] = ing[i];
+                ingplacecount++;
             }
         }
         db.makemedinner(newing);
@@ -59,15 +61,20 @@ DBHelper db;
             tv.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT));
+            layout.addView(tv);
         }
         for (int i = 0;i < db.makemedinner(newing).length;i++){
             Button btn = new Button(this);
             btn.setText(db.makemedinner(newing)[i]);
             btn.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            ));
-        }
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            layout.addView(btn);
+        }*/
 
+    }
+
+    @Override
+    public void onClick(View view) {
     }
 }
