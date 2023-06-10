@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 //www.mako.co.il/food-recipes/recipes_column-pasta/Recipe-dd269cd9815a281027.htm?sCh=bc0539cdf3178110&pId=25483675 פסטה רוזה
 //https://www.mako.co.il/food-cooking_magazine/food-store/Recipe-4bb855142603871026.htm?sCh=bc0539cdf3178110&pId=25483675 בולונז
@@ -28,6 +29,7 @@ import android.widget.TextView;
 public class recepies extends AppCompatActivity implements View.OnClickListener{
 DBHelper db;
 Button testbtn;
+Toast t, toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,34 +38,29 @@ Button testbtn;
         testbtn = findViewById(R.id.testbtn);
         testbtn.setOnClickListener(this);
 
-      /*  String[] ing = getIntent().getStringArrayExtra("aving");
         int count = 0;
-        for (int i =0; i < ing.length; i++){
-            if (ing[i] != null){
+        for (int i =0; i < getIntent().getStringArrayExtra("aving").length; i++){
+            if (getIntent().getStringArrayExtra("aving")[i] != null){
                 count++;
             }
         }
         String[] newing = new String[count];
         int ingplacecount = 0;
-        for (int i =0; i < ing.length; i++){
-            if (ing[i] != null){
-                newing[ingplacecount] = ing[i];
+        for (int i =0; i < getIntent().getStringArrayExtra("aving").length; i++){
+            if (getIntent().getStringArrayExtra("aving")[i] != null){
+                newing[ingplacecount] = getIntent().getStringArrayExtra("aving")[i];
                 ingplacecount++;
             }
+            toast.makeText(getApplicationContext(), "test successfully", toast.LENGTH_SHORT).show();
         }
         db.makemedinner(newing);
         LinearLayout layout = findViewById(R.id.recepieslayout);
         if (db.makemedinner(newing).length == 0 ){
-            TextView tv = new TextView(this);
-            tv.setText("we do not have a recepie with only those ingrediants, please try something else");
-            tv.setBackgroundColor(Color.BLACK);
-            tv.setTextColor(Color.WHITE);
-            tv.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
-            layout.addView(tv);
+            t.makeText(getApplicationContext(), "No recepies found", t.LENGTH_LONG).show();
+
         }
-        for (int i = 0;i < db.makemedinner(newing).length;i++){
+        toast.makeText(getApplicationContext(), "test successfully", toast.LENGTH_SHORT).show();
+         /*else for (int i = 0;i < db.makemedinner(newing).length;i++){
             Button btn = new Button(this);
             btn.setText(db.makemedinner(newing)[i]);
             btn.setLayoutParams(new LinearLayout.LayoutParams(
