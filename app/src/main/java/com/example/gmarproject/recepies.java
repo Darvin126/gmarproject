@@ -37,6 +37,7 @@ Toast t, toast;
         db = new DBHelper(this);
         testbtn = findViewById(R.id.testbtn);
         testbtn.setOnClickListener(this);
+        LinearLayout layout = findViewById(R.id.recepieslayout);
 
         int count = 0;
         for (int i =0; i < getIntent().getStringArrayExtra("aving").length; i++){
@@ -53,9 +54,15 @@ Toast t, toast;
             }
             toast.makeText(getApplicationContext(), "test successfully", toast.LENGTH_SHORT).show();
         }
-        db.makemedinner(newing);
-        LinearLayout layout = findViewById(R.id.recepieslayout);
-        if (db.makemedinner(newing).length == 0 ){
+
+        boolean isEmpty = true;
+        for (String item : db.makemedinner(newing)) {
+            if (item != null && !item.isEmpty()) {
+                isEmpty = false;
+                break;
+            }
+        }
+        if (!isEmpty){
             t.makeText(getApplicationContext(), "No recepies found", t.LENGTH_LONG).show();
 
         }
