@@ -58,23 +58,23 @@ Toast t, toast;
         boolean isEmpty = true;
         for (String item : db.makemedinner(newing)) {
             if (item != null && !item.isEmpty()) {
-                isEmpty = false;
+                isEmpty = true;
+                Toast.makeText(this,item,Toast.LENGTH_LONG ).show();
                 break;
             }
         }
         if (!isEmpty){
             t.makeText(getApplicationContext(), "No recepies found", t.LENGTH_LONG).show();
-
+            toast.makeText(getApplicationContext(), "test successfully", toast.LENGTH_SHORT).show();
         }
-        toast.makeText(getApplicationContext(), "test successfully", toast.LENGTH_SHORT).show();
-         /*else for (int i = 0;i < db.makemedinner(newing).length;i++){
+         else for (int i = 0;i < db.makemedinner(newing).length;i++){
             Button btn = new Button(this);
             btn.setText(db.makemedinner(newing)[i]);
             btn.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT));
             layout.addView(btn);
-        }*/
+        }
 
     }
 

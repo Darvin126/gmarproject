@@ -181,6 +181,7 @@ public class DBHelper extends SQLiteOpenHelper {
          String[] resultArray = new String[resultCount];
          int index = 0;
 
+
          if (cursor.moveToFirst()) {
              do {
                  @SuppressLint("Range") String result = cursor.getString(cursor.getColumnIndex("rnames"));
