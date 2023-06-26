@@ -165,7 +165,7 @@ public class DBHelper extends SQLiteOpenHelper {
          else
              return false;
      }
-     public String[] makemedinner(String[] ingrediants){
+    /* public String[] makemedinner(String[] ingrediants){
          SQLiteDatabase MyDB = this.getWritableDatabase();
          String str = "Select rnames from comb where";
          for(int i = 0; i < ingrediants.length; i++){
@@ -192,5 +192,5 @@ public class DBHelper extends SQLiteOpenHelper {
 
          cursor.close();
           return resultArray;
-     }
+     }*/
 }

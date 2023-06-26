@@ -34,11 +34,11 @@ DBHelper db;
                 String pass = password.getText().toString();
                 Toast.makeText(login.this,user + " " + pass, Toast.LENGTH_SHORT).show();
                 Toast.makeText(login.this, "sign in successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                //if (user.equals("") || pass.equals(""))
-                   // Toast.makeText(login.this, "please enter all the fields", Toast.LENGTH_SHORT).show();
-               /* else {
+                // Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+               // startActivity(intent);
+                if (user.equals("") || pass.equals(""))
+                   Toast.makeText(login.this, "please enter all the fields", Toast.LENGTH_SHORT).show();
+                else {
                     Boolean checkuserpass = db.checkusernamepassword(user, pass);
                     if(checkuserpass == true){
                         Toast.makeText(login.this, "sign in successfully", Toast.LENGTH_SHORT).show();
@@ -47,7 +47,7 @@ DBHelper db;
                     } else {
                         Toast.makeText(login.this, "password and/or username incorrect", Toast.LENGTH_SHORT).show();
                     }
-                }*/
+                }
             }
         });
     }

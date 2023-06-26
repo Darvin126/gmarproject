@@ -27,17 +27,13 @@ import android.widget.Toast;
 //https://www.mako.co.il/food-cooking_magazine/cooking-with-children/Recipe-ca358ae44ac2b61027.htm?sCh=bc0539cdf3178110&pId=25483675 פסטה רוטה עגבניות
 //https://www.mako.co.il/food-recipes/recipes_column-bread/Recipe-127f69e2a576281027.htm?sCh=860539cdf3178110&pId=25483675 לחמניות פופאוברס
 public class recepies extends AppCompatActivity implements View.OnClickListener{
-DBHelper db;
-Button testbtn;
-Toast t, toast;
+//DBHelper db;
+Toast toast;
+boolean tomato , potatoes , milk , pasta , cheese , flour , meat , heavycream , eggs , chocolate  ,chicken ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recepies);
-        db = new DBHelper(this);
-        testbtn = findViewById(R.id.testbtn);
-        testbtn.setOnClickListener(this);
-        LinearLayout layout = findViewById(R.id.recepieslayout);
 
         int count = 0;
         for (int i =0; i < getIntent().getStringArrayExtra("aving").length; i++){
@@ -45,40 +41,200 @@ Toast t, toast;
                 count++;
             }
         }
-        String[] newing = new String[count];
+         String[] newing = new String[count];
         int ingplacecount = 0;
         for (int i =0; i < getIntent().getStringArrayExtra("aving").length; i++){
             if (getIntent().getStringArrayExtra("aving")[i] != null){
                 newing[ingplacecount] = getIntent().getStringArrayExtra("aving")[i];
                 ingplacecount++;
             }
-            toast.makeText(getApplicationContext(), "test successfully", toast.LENGTH_SHORT).show();
         }
-
-        boolean isEmpty = true;
-        for (String item : db.makemedinner(newing)) {
-            if (item != null && !item.isEmpty()) {
-                isEmpty = true;
-                Toast.makeText(this,item,Toast.LENGTH_LONG ).show();
-                break;
+        for (int i = 0; i < newing.length; i++){
+            toast.makeText(getApplicationContext(), " test1 ", toast.LENGTH_SHORT).show();
+            if (newing[i].equals("tomato")){
+                tomato = true;
+            }
+            if (newing[i].equals("potato")){
+                potatoes = true;
+            }
+            if (newing[i].equals("milk")){
+                milk = true;
+            }
+            if (newing[i].equals("flour")){
+                flour = true;
+            }
+            if (newing[i].equals("eggs")){
+                eggs = true;
+            }
+            if (newing[i].equals("chocolate")){
+                chocolate = true;
+            }
+            if (newing[i].equals("meat")){
+                meat = true;
+            }
+            if (newing[i].equals("heavy cream")){
+                heavycream = true;
+            }
+            if (newing[i].equals("pasta")){
+                pasta = true;
+            }
+            if (newing[i].equals("chicken")){
+                chicken = true;
+            }
+            if (newing[i].equals("cheese")){
+                cheese = true;
             }
         }
-        if (!isEmpty){
-            t.makeText(getApplicationContext(), "No recepies found", t.LENGTH_LONG).show();
-            toast.makeText(getApplicationContext(), "test successfully", toast.LENGTH_SHORT).show();
+        if (pasta && tomato && meat){
+            Button button = new Button(this);
+            button.setText("פסטה בולונז");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
         }
-         else for (int i = 0;i < db.makemedinner(newing).length;i++){
-            Button btn = new Button(this);
-            btn.setText(db.makemedinner(newing)[i]);
-            btn.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
-            layout.addView(btn);
+        if (flour && milk && chocolate && eggs){
+            Button button = new Button(this);
+            button.setText("עוגת שוקולד");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
         }
+        if (pasta && tomato && heavycream){
+            Button button = new Button(this);
+            button.setText("פסטה רוזה");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (flour && eggs && milk){
+            Button button = new Button(this);
+            button.setText("עוגת גבינה");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (flour && eggs && meat){
+            Button button = new Button(this);
+            button.setText("לחמניות בשר");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (flour && eggs && chicken){
+            Button button = new Button(this);
+            button.setText("נאגטס");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (potatoes){
+            Button button = new Button(this);
+            button.setText("מרק תפוח אדמה");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (pasta && tomato ){
+            Button button = new Button(this);
+            button.setText("מרק עגבניות ופסטה");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (chicken && tomato && meat){
+            Button button = new Button(this);
+            button.setText("צלי בשר");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (pasta && meat){
+            Button button = new Button(this);
+            button.setText("קונכיות ממולאת בשר");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (chicken && potatoes ){
+            Button button = new Button(this);
+            button.setText("כנפייים צלויות על תפוח אדמה");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (chicken){
+            Button button = new Button(this);
+            button.setText("חזה עוף");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (pasta && milk && heavycream){
+            Button button = new Button(this);
+            button.setText("מקרוני וגבינה");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (pasta && tomato && flour && heavycream){
+            Button button = new Button(this);
+            button.setText("פסטת חמאת עגבניות ופירורי לחם");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (pasta && tomato){
+            Button button = new Button(this);
+            button.setText("פסטה ברוטה עגבניות");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+        if (flour && eggs && cheese && milk){
+            Button button = new Button(this);
+            button.setText("לחמניות פופאוברס");
+            // Add any other desired properties and attributes
+
+            // Add the button to the activity's layout
+            LinearLayout layout = findViewById(R.id.recepieslayout); // Replace with your activity's root layout
+            layout.addView(button);
+        }
+
 
     }
 
     @Override
     public void onClick(View view) {
+
     }
 }

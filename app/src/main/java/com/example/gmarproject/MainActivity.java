@@ -169,9 +169,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mmd){
             toast.makeText(getApplicationContext(), "submitted successfully", toast.LENGTH_SHORT).show();
 
-            String[] ing = new String[10];
+            String[] ing = new String[20];
             Intent intent = new Intent(getApplicationContext(), recepies.class);
-            Toast.makeText(this, "bonapetite", Toast.LENGTH_SHORT).show();
             if (cb1.isChecked() == true){
                 ing[0] = String.valueOf(cb1.getText());
             }
@@ -205,7 +204,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (cb11.isChecked() == true){
                 ing[10] = String.valueOf(cb11.getText());
             }
-            Toast.makeText(this, "bonapetite 2", Toast.LENGTH_SHORT).show();
             intent.putExtra("aving", ing);
 
             startActivity(intent);

@@ -12,9 +12,4 @@
     android:id="@+id/recepieslayout"
     tools:context=".recepies">
 
-    <Button
-        android:id="@+id/testbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
 </LinearLayout>
